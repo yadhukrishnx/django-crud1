@@ -4,6 +4,7 @@ from django.shortcuts import render
 from .models import Book
 
 def createbook(request):
+    books=Book.objects.all()
     if request.method=='POST':
         title=request.POST.get('title')
         price=request.POST.get('price')
@@ -11,5 +12,4 @@ def createbook(request):
         book=Book(title=title,price=price)
         
         book.save()
-    
-    return render(request,'index.html')
+    return render(request,'index.html',{'books':books})

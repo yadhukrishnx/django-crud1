@@ -13,5 +13,11 @@
         <label for="">Book Price : </label><input type="number" name="price" >
         <input type="submit" value="Submit">
     </form>
+    <br>
+    <h1>Book details</h1>
+    {% for book in books %}
+    {{ book.title }} -
+    {{ book.price }} (price) <br><br>
+    {% endfor %}
 </body>
 </html>
