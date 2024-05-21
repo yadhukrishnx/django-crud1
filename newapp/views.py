@@ -13,3 +13,7 @@ def createbook(request):
         
         book.save()
     return render(request,'index.html',{'books':books})
+
+def detailedview(request,book_id):
+    book=Book.objects.get(id=book_id)
+    return render(request,'detailedview.html',{'book':book})
