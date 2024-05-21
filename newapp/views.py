@@ -34,3 +34,15 @@ def updatebook(request,book_id):
         return redirect('/')
     
     return render(request,'updatebook.html',{'book':book})
+
+
+def deletebook(request,book_id):
+    
+    book=Book.objects.get(id=book_id)
+
+    if request.method=='POST':
+        
+        book.delete()
+        
+        return redirect('/')
+    return render(request,'deletebook.html',{'book':book})

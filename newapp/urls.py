@@ -5,4 +5,6 @@ urlpatterns = [
     path("",views.createbook),
     path("detailedview/<int:book_id>/",views.detailedview),
     path("updatebook/<int:book_id>/",views.updatebook),
+
+    path("deletebook/<int:book_id>/",views.deletebook),
 ]
